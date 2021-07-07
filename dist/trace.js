@@ -6,9 +6,9 @@ class tracejs {
 		this.pid = config.project_id;
 	}
 
-	static report(code, tag) {
+	static report(tag, error, line, source) {
 		var validation = new URL('https://tracejs.co/api/v1/validate')
-		var whitelist = {url: this.getURL()}
+		var whitelist = {url: this.getURL(), uid: this.id, pid: this.pid}
 
 		// Passing url queries
 		validation.search = new URLSearchParams(whitelist).toString();
@@ -20,7 +20,12 @@ class tracejs {
 			if (data.result) { // add || statement later for open security
 				// Authorized API call
 				var call = new URL('https://tracejs.co/api/v1/report')
-				var param = {code: code, tag: tag} 
+				var param = { tag: tag,
+							  error: error,
+							  line: line,
+							  source: source,
+							  uid: this.id, 
+							  pid: this.pid } 
 
 				//passing url queries
 				call.search = new URLSearchParams(param).toString();
@@ -48,14 +53,15 @@ class tracejs {
 	}	
 }
 
+//AUTHENTICATION
+// Use whitelisted browser in User Dashboard and compare to url from client code
+// Get whitelisted browser through protected firestore database
+
 window.onerror = function (msg, url, lineNo, columnNo, error) {
-    var tag = url + " @ Ln " + lineNo + " Col " + columnNo
-    var code = msg + ' ' + error
-    console.log(msg)
-    console.log(url)
-    console.log(lineNo)
-    console.log(columnNo)
-    console.log(error)
-    tracejs.report(code, tag);
+    var tag = "General"
+    var error = error.stack
+    var line = lineNo
+    var source = url
+    tracejs.report(tag, error, line, source);
     return false;
 }
