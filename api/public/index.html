@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>TraceJS | Bug Tracing Simplified</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/img/favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="assets/img/favicon/favicon-16x16.png">
+  <link rel="manifest" href="assets/img/favicon/site.webmanifest">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Nunito:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="assets/vendor/remixicon/remixicon.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+
+  <!-- Main CSS File -->
+  <link href="assets/css/style.css" rel="stylesheet">
+
+  <!-- Highlight.js Initialization -->
+  <link rel="stylesheet" href="assets/vendor/highlight/github-dark.min.css">
+  <script src="assets/vendor/highlight/highlight.min.js"></script>
+  <script>hljs.highlightAll();</script>
+
+</head>
+
+<body>
+
+  <header id="header" class="header fixed-top">
+    <div class="container-fluid container-xl d-flex align-items-center justify-content-between">
+
+      <a href="index.html" class="logo d-flex align-items-center">
+        <img src="assets/img/logotransparent.png" alt="">
+        <span>TraceJS</span>
+      </a>
+
+      <nav id="navbar" class="navbar">
+        <ul>
+          <li><a class="nav-link scrollto active" href="#about">About</a></li>
+          <li><a class="nav-link scrollto" href="#features">Features</a></li>
+          <li><a class="nav-link scrollto" href="#pricing">Pricing</a></li>
+          <li class="dropdown"><a href="#"><span>Docs</span> <i class="bi bi-chevron-down"></i></a>
+            <ul>
+              <li><a href="#">TraceJS SDK</a></li>
+              <li class="dropdown"><a href="#"><span>REST API</span> <i class="bi bi-chevron-right"></i></a>
+                <ul>
+                  <li><a href="#">/report</a></li>
+                  <li><a href="#">/history</a></li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+          <li><a class="nav-link scrollto" href = "login.html">Login</a></li>
+          <li><a id = "noactive" href = "signup.html" class="getstarted">Get Started</a></li>
+        </ul>
+        <i class="bi bi-list mobile-nav-toggle"></i>
+      </nav>
+    </div>
+  </header>
+
+  <section id="hero" class="hero d-flex align-items-center">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-6 d-flex flex-column justify-content-center">
+          <h1 data-aos="fade-up">Client-side Deployment Bug Tracing Simplified</h1>
+          <h2 data-aos="fade-up" data-aos-delay="400" style = "line-height: 1.6;">TraceJS combines <strong>custom callbacks</strong>, <strong>DOM tracking</strong>, and a <strong>centralized dashboard</strong>, empowering developers to discover, replicate, and fix deployment bugs in record time</h2>
+          <div data-aos="fade-up" data-aos-delay="600">
+            <div class="text-center text-lg-start">
+              <a href="#about" class="btn-get-started scrollto d-inline-flex align-items-center justify-content-center align-self-center">
+                <span>Get Started</span>
+                <i class="bi bi-arrow-right"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-6 hero-img" data-aos="zoom-out" data-aos-delay="200">
+          <img src="assets/img/hero-img.png" class="img-fluid" alt="">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <main id="main">
+    
+    <section id="about" class="about">
+      <div class="container" data-aos="fade-up">
+        <div class="row gx-0">
+          <div class="col-lg-6 d-flex flex-column justify-content-center codeblockpane" data-aos="fade-up" data-aos-delay="200">
+            <div class="content">
+              <h3>Plug and Debug</h3>
+              <h2>Easily add our debugging capabilities to any JS-based project in only a few lines of code.</h2>
+              <p>
+                TraceJS helps to report deployment bugs using client-side technologies only. No server is required – just connect TraceJS to your existing website, create a project, and use our Javascript library to report bugs.
+              </p>
+              <div class="text-center text-lg-start">
+                <a class="btn-read-more d-inline-flex align-items-center justify-content-center align-self-center">
+                  <span>Read Our Docs</span>
+                  <i class="bi bi-arrow-right"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-6 d-flex flex-column align-items-center" data-aos="zoom-out" data-aos-delay="200">
+            <div>
+              <ul class="nav nav-tabs codeblock" id="myTab" role="tablist">
+  <li class="nav-item" role="presentation">
+    <button class="nav-link active tab-nav-custom" id="home-tab" data-bs-toggle="tab" data-bs-target="#home" type="button" role="tab" aria-controls="home" aria-selected="true">TraceJS SDK</button>
+  </li>
+  <li class="nav-item" role="presentation">
+    <button class="nav-link tab-nav-custom" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile" type="button" role="tab" aria-controls="profile" aria-selected="false">REST API</button>
+  </li>
+</ul>
+<div class="tab-content code" id="myTabContent">
+  <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+<pre><code class="language-html">&#60;script type="text/javascript"
+  src="https://cdn.jsdelivr.net/npm/tracejs-co@1/dist/trace.min.js"&#62;
+&#60;/script&#62;
+&#60;script&#62;
+  // TODO: Replace with your TraceJS Project Configuration
+  var traceJSConfig = {
+    id: "YOUR_USER_ID",
+    project: "YOUR_PROJECT_ID",
+    //other properties...
+  };
+
+  // Initialize TraceJS
+  tracejs.init(traceJSConfig);
+&#60;/script&#62;
+</code></pre>
+  </div>
+  <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+<pre><code class="language-javascript">var data = {
+    user_id: 'YOUR_USER_ID',
+    project_id: 'YOUR_PROJECT_ID',
+    template_params: {
+        'user': 'Hugo',
+        'code': '401',
+        'tag': 'login'
+    }
+};
+ 
+$.ajax('https://tracejs.co/api/v1/report', {
+    type: 'POST',
+    data: JSON.stringify(data),
+    contentType: 'application/json'
+}).done(function() {
+    alert('Bug reported!');
+}).fail(function(error) {
+    alert('Oops... ' + JSON.stringify(error));
+});
+</code></pre>
+  </div>
+</div>
+
+</div>
+          </div>
+
+        </div>
+      </div>
+
+    </section>
+    <section id="features" class="values">
+
+      <div class="container" data-aos="fade-up">
+
+        <header class="section-header">
+          <h2>Features</h2>
+          <p>Never lose conversions from bugs again.</p>
+        </header>
+
+        <div class="row">
+
+          <div class="col-lg-4">
+            <div class="box" data-aos="fade-up" data-aos-delay="200">
+              <img src="assets/img/values-1.png" class="img-fluid" alt="">
+              <h3>Get notified of bugs live</h3>
+              <p>Easily view all productions bugs in your centralized dashboard as soon as they occur.</p>
+            </div>
+          </div>
+
+          <div class="col-lg-4 mt-4 mt-lg-0">
+            <div class="box" data-aos="fade-up" data-aos-delay="400">
+              <img src="assets/img/values-3.png" class="img-fluid" alt="">
+              <h3>Easily replicate reported bugs</h3>
+              <p>Our bug reports come with a step-by-step walkthough on how to replicate bugs.</p>
+            </div>
+          </div>
+
+          <div class="col-lg-4 mt-4 mt-lg-0">
+            <div class="box" data-aos="fade-up" data-aos-delay="600">
+              <img src="assets/img/values-2.png" class="img-fluid" alt="">
+              <h3>Integrate into any web project</h3>
+              <p>TraceJS was built by web developers for web developers, with easy integration in mind.</p>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+    <section id="pricing" class="pricing">
+
+      <div class="container" data-aos="fade-up">
+
+        <header class="section-header">
+          <h2>Pricing</h2>
+          <p>Choose a plan that suits you.</p>
+        </header>
+
+        <div class="row gy-4" data-aos="fade-left">
+
+          <div class="col-lg-4 col-md-6" data-aos="zoom-in" data-aos-delay="100">
+            <div class="box">
+              <h3 style="color: #07d5c0;">Developer</h3>
+              <div class="price" style = "margin:25px 0 25px 0;"><sup>$</sup>0<span> / mo</span></div>
+              <ul>
+                <li>50 Monthly Bug Reports</li>
+                <li>100 API Calls</li>
+                <li>1 Project</li>
+                <br>
+                <li class="na">Data Retention</li>
+                <li class="na">Priority Support</li>
+              </ul>
+              <a href="#" class="btn-buy">Get Started</a>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6" data-aos="zoom-in" data-aos-delay="200">
+            <div class="box">
+              <span class="featured">Popular</span>
+              <h3 style="color: #65c600;">Startup</h3>
+              <div class="price" style = "margin:25px 0 25px 0;"><sup>$</sup>9<span> / mo</span></div>
+              <ul>
+                <li>500 Monthly Bug Reports</li>
+                <li>1,000 API Calls</li>
+                <li>3 Projects</li>
+                <br>
+                <li>1-Month Data Retention</li>
+                <li>Priority Email Support</li>
+              </ul>
+              <a href="#" class="btn-buy">Get Started</a>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6" data-aos="zoom-in" data-aos-delay="300">
+            <div class="box">
+              <h3 style="color: #ff901c;">Enterprise</h3>
+              <div class="price" style = "margin:25px 0 25px 0;"><sup>$</sup>29<span> / mo</span></div>
+              <ul>
+                <li>5,000 Monthly Bug Reports</li>
+                <li>Unlimited API Calls</li>
+                <li>10 Projects</li>
+                <br>
+                <li>Permanent Data Retention</li>
+                <li>Live Support Sessions</li>
+              </ul>
+              <a href="#" class="btn-buy">Get Started</a>
+            </div>
+          </div>
+
+        </div>
+        <div class="row gy-4" data-aos="fade" style = "padding: 12px;">
+          <div class = "container planneeds">
+            <h2>Have higher or different needs? <span style = "text-decoration: underline;">Contact us</span></h2>
+          </div>
+        </div>   
+
+      </div>
+
+    </section>
+    <section id="faq" class="faq">
+
+      <div class="container" data-aos="fade-up">
+
+        <header class="section-header">
+          <h2>F.A.Q</h2>
+          <p>Got more questions?</p>
+        </header>
+
+        <div class="row">
+          <div class="col-lg-6">
+            <div class="accordion accordion-flush" id="faqlist1">
+              <div class="accordion-item" id = "borderless1">
+                <h2 class="accordion-header">
+                  <button id = "button1" class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq-content-1" onclick = "collapseFAQ()">
+                    What is TraceJS and how does it work?
+                  </button>
+                </h2>
+                <div id="faq-content-1" class="accordion-collapse collapse" data-bs-parent="#faqlist1">
+                  <div class="accordion-body">
+                    TraceJS is an API that automatically reports bugs that users encounter on live websites. It works by allowing you to add custom callbacks that trigger on errors and reports them to your user dashboard!
+                  </div>
+                </div>
+              </div>
+
+              <div class="accordion-item" id = "borderless2">
+                <h2 class="accordion-header">
+                  <button id = "button2" class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq-content-2" onclick = "collapseFAQ()">
+                    Do I need to be a developer to use TraceJS?
+                  </button>
+                </h2>
+                <div id="faq-content-2" class="accordion-collapse collapse" data-bs-parent="#faqlist1">
+                  <div class="accordion-body">
+                    TraceJS is a tool primarily designed for web developers and software teams to catch deployment bugs with websites. However, our centralized dashboard can be read by anyone!
+                  </div>
+                </div>
+              </div>
+
+              <div class="accordion-item" id = "borderless3">
+                <h2 class="accordion-header">
+                  <button id = "button3" class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq-content-3" onclick = "collapseFAQ()">
+                    Is TraceJS compatible with other frameworks?
+                  </button>
+                </h2>
+                <div id="faq-content-3" class="accordion-collapse collapse" data-bs-parent="#faqlist1">
+                  <div class="accordion-body">
+                    Yes! TraceJS is a standalone, asynchronous API that will not interfere with any other frameworks or libraries you may be using. We are working diligently to add more integrations to accomodate all types of websites.
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+          <div class="col-lg-6">
+
+            <div class="accordion accordion-flush" id="faqlist2">
+
+              <div class="accordion-item" id = "borderless4">
+                <h2 class="accordion-header">
+                  <button id = "button4" class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq2-content-1" onclick = "collapseFAQ()">
+                    Do I need a paid plan to use TraceJS?
+                  </button>
+                </h2>
+                <div id="faq2-content-1" class="accordion-collapse collapse" data-bs-parent="#faqlist2">
+                  <div class="accordion-body">
+                    Nope! Anyone can use TraceJS for free through our Developer Plan, which allows 100 bug reports and 200 API calls a month for all your personal project needs. If you find yourself needing more bug reports or want to use TraceJS for other projects, you can upgrade your plan at any time!
+                  </div>
+                </div>
+              </div>
+
+              <div class="accordion-item" id = "borderless5">
+                <h2 class="accordion-header">
+                  <button id = "button5" class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq2-content-2" onclick = "collapseFAQ()">
+                    What if I exceed my plan limits?
+                  </button>
+                </h2>
+                <div id="faq2-content-2" class="accordion-collapse collapse" data-bs-parent="#faqlist2">
+                  <div class="accordion-body">
+                    Don't worry, plan limits refresh every month! Howver, any bugs will not be reported after you have reached your monthly plan limit. Of course, we recommend upgrading your plan if you find your project repeatedly reaching your plan limit! 
+                  </div>
+                </div>
+              </div>
+
+              <div class="accordion-item" id = "borderless6">
+                <h2 class="accordion-header">
+                  <button id = "button6" class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq2-content-3" onclick = "collapseFAQ()">
+                    Are custom pricing plans available?
+                  </button>
+                </h2>
+                <div id="faq2-content-3" class="accordion-collapse collapse" data-bs-parent="#faqlist2">
+                  <div class="accordion-body">
+                    Absolutely! Please email our support team at support@tracejs.co to inquire about custom pricing plans. We will do our best to accomodate you!
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+  </main>
+
+  <footer id="footer" class="footer">
+
+    <div class="footer-top">
+      <div class="container">
+        <div class="row gy-4">
+          <div class="col-lg-5 col-md-12 footer-info">
+            <a href="index.html" class="logo d-flex align-items-center">
+              <img src="assets/img/logotransparent.png" alt="">
+              <span style = "line-height: 1.6;">TraceJS</span>
+            </a>
+            <p>A company, abbreviated as co., is a legal entity representing an association of people, whether natural, legal, or a mixture of both, with a specific objective.<br><br></p>
+            <div class="social-links mt-3">
+              <a href="#" class="twitter"><i class="bi bi-twitter"></i></a>
+              <a href="#" class="facebook"><i class="bi bi-github"></i></a>
+              <a href="#" class="linkedin"><i class="bi bi-linkedin bx bxl-linkedin"></i></a>
+            </div>
+          </div>
+
+          <div class="col-lg-2 col-6 footer-links">
+            <h4>Product</h4>
+            <ul>
+              <li><a href="#pricing">Pricing</a></li>
+              <li><a href="#">Docs</a></li>
+              <li><a href="login.html">Login</a></li>
+              <li><a href="dashboard.html">Dashboard</a></li>
+            </ul>
+          </div>
+
+          <div class="col-lg-2 col-6 footer-links">
+            <h4>Company</h4>
+            <ul>
+              <li><a href="#">About</a></li>
+              <li><a href="#">Jobs</a></li>
+              <li><a href="#">Privacy</a></li>
+              <li><a href="#">Terms of Service</a></li>
+              <li><a href="#">Support</a></li>
+            </ul>
+          </div>
+
+          <div class="col-lg-3 col-md-12 footer-contact text-center text-md-start">
+            <h4>Contact</h4>
+            <p>
+              272 Virginia Farme Ln <br>
+              Carlisle, MA 01741<br>
+              United States <br><br>
+              <strong>Phone:</strong> (978) 201-5133<br>
+              <strong>Email:</strong> support@tracejs.co<br>
+            </p>
+
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="copyright">
+        &copy; Copyright <strong><span>TraceJS</span></strong>. All Rights Reserved
+      </div>
+    </div>
+  </footer>
+
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.js"></script>
+  <script src="assets/vendor/aos/aos.js"></script>
+  <script src="assets/vendor/php-email-form/validate.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="assets/vendor/purecounter/purecounter.js"></script>
+  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+
+  <script type = "text/javascript">
+    var faqA1 = document.getElementById("faq-content-1")
+    var faqA2 = document.getElementById("faq-content-2")
+    var faqA3 = document.getElementById("faq-content-3")
+    var faqB1 = document.getElementById("faq2-content-1")
+    var faqB2 = document.getElementById("faq2-content-2")
+    var faqB3 = document.getElementById("faq2-content-3")
+
+    function collapseFAQ() {
+      if (faqA1.classList.contains("show")) {
+        faqA1.classList.remove("show")
+        document.getElementById("button1").classList.add("collapsed")
+
+      }
+      if (faqA2.classList.contains("show")) {
+        faqA2.classList.remove("show")
+        document.getElementById("button2").classList.add("collapsed")
+      }
+      if (faqA3.classList.contains("show")) {
+        faqA3.classList.remove("show")
+        document.getElementById("button3").classList.add("collapsed")
+      }
+      if (faqB1.classList.contains("show")) {
+        faqB1.classList.remove("show")
+        document.getElementById("button4").classList.add("collapsed")
+      }
+      if (faqB2.classList.contains("show")) {
+        faqB2.classList.remove("show")
+        document.getElementById("button5").classList.add("collapsed")
+      }
+      if (faqB3.classList.contains("show")) {
+        faqB3.classList.remove("show")
+        document.getElementById("button6").classList.add("collapsed")
+      }
+    }
+    
+  </script>
+
+  <!-- Main JS File -->
+  <script src="assets/js/main.js"></script>
+
+</body>
+
+</html>

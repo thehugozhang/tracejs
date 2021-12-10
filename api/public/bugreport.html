@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en"> 
+<head>
+    <title>Bug Report</title>
+    
+    <!-- Meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <meta name="description" content="">
+    <meta name="author" content="Hugo Zhang">   
+
+    <!-- Favicons -->
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/img/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/img/favicon/favicon-16x16.png">
+    <link rel="manifest" href="assets/img/favicon/site.webmanifest">
+    
+    <!-- FontAwesome JS-->
+    <script defer src="assets/vendor/fontawesome/js/all.min.js"></script>
+    <link href="assets/vendor/remixicon/remixicon.css" rel="stylesheet">
+    <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    
+    <!-- Google Fonts -->
+  	<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Nunito:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+  	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+
+    <!-- App CSS -->  
+    <link id="theme-style" rel="stylesheet" href="assets/css/bugreport.css">
+
+</head> 
+
+<body class="app">   	
+    <header class="app-header fixed-top">	   	            
+        <div class="app-header-inner">  
+	        <div class="container-fluid py-2 h-100">
+		    	<div class="col-auto h-100">
+		    		<div class = "app-header-content h-100">
+		    			<div class = "d-flex justify-content-between align-items-center h-100 innerheadercontentpadding">
+						    <a id="sidepanel-toggler" class="sidepanel-toggler d-inline-block d-xl-none" href="#">
+							    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 30 30" role="img"><title>Menu</title><path stroke="currentColor" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2" d="M4 7h22M4 15h22M4 23h22"></path></svg>
+						    </a>
+						    <div class = "d-flex align-items-center">
+						    	<a href = "console.html" class = "btpca d-inline-flex align-items-center">
+								    <i class="bi bi-arrow-bar-left"></i>
+								    <span class="d-flex align-items-center">Back to Project Console</span>
+								</a>
+							</div>
+
+							<div class = "d-flex align-items-center">
+								<a href = "#" class = "rightnavpadding navannouncementsicon d-inline-flex align-items-center">
+								    <i class="bi bi-bell-fill"></i><!-- animate__animated animate__swing animate__infinite -->
+								</a>
+								<a href = "#" class = "rightnavpadding btpca d-inline-flex align-items-center">
+								    <!-- <i class="bi bi-person"></i> -->
+								    <span class="d-flex align-items-center" style = "font-weight: 700;" id = "welcome-label">Welcome</span>
+								</a>
+						    	<a id = "logout-btn" class = "rightnavpadding btpca d-inline-flex align-items-center">
+								    <span class="d-flex align-items-center">Logout</span>
+								</a>
+							</div>
+							
+							<!-- <a href = "#" class="btn-logout d-inline-flex align-items-center justify-content-center align-self-center">
+			                  <span>Logout</span>
+			                </a> -->
+						</div>
+					</div>
+			    </div><!--//col-->
+	        </div><!--//container-fluid-->
+        </div><!--//app-header-inner-->
+        <div id="app-sidepanel" class="app-sidepanel"> 
+	        <div id="sidepanel-drop" class="sidepanel-drop"></div>
+	        <div class="sidepanel-inner d-flex flex-column">
+		        <a href="#" id="sidepanel-close" class="sidepanel-close d-xl-none">&times;</a>
+		        <div class="app-branding">
+		            <a class="app-logo" href="index.html"><img class="logo-icon me-2" src="assets/img/logotransparent.png" alt="logo"><span class="logo-text">TraceJS</span></a>
+	
+		        </div><!--//app-branding-->  
+		        
+			    <nav id="app-nav-main" class="app-nav app-nav-main flex-grow-1">
+				    <ul class="app-menu list-unstyled accordion" id="menu-accordion">
+				    	<li class="nav-item has-submenu">
+					        <a class="nav-link submenu-toggle" href="#" data-bs-toggle="collapse" data-bs-target="#submenu-1" aria-expanded="false" aria-controls="submenu-1">
+		                         <i style = "width: 20px; margin-right: 10px;" class="fas fa-project-diagram"></i><span class="nav-link-text">Project Overview</span>
+		                         <span class="submenu-arrow">
+		                             <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-chevron-down" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+									  <path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/>
+									</svg>
+	                             </span>
+					        </a>
+					        <div id="submenu-1" class="collapse submenu submenu-1" data-bs-parent="#menu-accordion">
+						        <ul class="submenu-list list-unstyled">
+							        <li class="submenu-item"><a class="submenu-link" href="login.html">General</a></li>
+							        <li class="submenu-item"><a class="submenu-link" href="signup.html">Integration</a></li>
+							        <li class="submenu-item"><a class="submenu-link" href="reset-password.html">Service Accounts</a></li>
+						        </ul>
+					        </div>
+					    </li>
+					    <li class="nav-item has-submenu">
+					        <a class="nav-link submenu-toggle" href="#" data-bs-toggle="collapse" data-bs-target="#submenu-2" aria-expanded="false" aria-controls="submenu-2">
+		                         <i style = "width: 20px; margin-right: 10px;" class="fas fa-user-alt"></i><span class="nav-link-text">Account</span>
+		                         <span class="submenu-arrow">
+		                             <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-chevron-down" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+									  <path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/>
+									</svg>
+	                             </span>
+					        </a>
+					        <div id="submenu-2" class="collapse submenu submenu-2" data-bs-parent="#menu-accordion">
+						        <ul class="submenu-list list-unstyled">
+							        <li class="submenu-item"><a class="submenu-link" href="login.html">Settings</a></li>
+							        <li class="submenu-item"><a class="submenu-link" href="signup.html">Billing</a></li>
+						        </ul>
+					        </div>
+					    </li>
+					    <li class="nav-item">
+					        <a class="nav-link disabled">
+		                         <span class="nav-link-text" style = "text-transform: uppercase; font-weight: 600; font-size: 12.35px; color: #a1a5b7!important;">DEBUG</span>
+					        </a>
+					    </li>
+					    <li class="nav-item">
+					        
+					        <a class="nav-link " href="dashboard.html">
+		                         <i style = "width: 20px; margin-right: 10px;" class="fas fa-th-large"></i><span class="nav-link-text">Dashboard</span>
+					        </a>
+					    </li>
+					    <li class="nav-item">
+					        <a class="nav-link active hovernoclick">
+		                         <i style = "width: 20px; margin-right: 10px;" class="fas fa-terminal"></i><span class="nav-link-text">Bug Report</span>
+					        </a>
+					    </li>
+					    <li class="nav-item">
+					        <a class="nav-link" href="docs.html">
+		                         <i style = "width: 20px; margin-right: 10px;" class="fas fa-chart-bar"></i><span class="nav-link-text">Usage</span>
+					        </a>
+					    </li>
+					    <hr>
+					    <li class="nav-item">
+					        <a class="nav-link" href="orders.html">
+						         </span>
+		                         <i style = "width: 20px; margin-right: 10px" class="fas fa-book"></i><span class="nav-link-text">Docs</span>
+					        </a>
+					    </li>
+
+					    <li class="nav-item">
+					        <a class="nav-link" href="orders.html">
+						         </span>
+		                         <i style = "width: 20px; margin-right: 10px;" class="fas fa-file-alt"></i><span class="nav-link-text">Changelog </span>
+		                         <span class="badge rounded-pill" style = "background: #ebf1ff; color: #4154f1;">v1.04</span>
+					        </a>
+					    </li>
+
+					   
+					    
+
+
+					   				    
+				    </ul><!--//app-menu-->
+			    </nav><!--//app-nav-->
+			    <!-- <div class="app-sidepanel-footer">
+				    <nav class="app-nav app-nav-footer">
+					    <ul class="app-menu footer-menu list-unstyled">
+						    <li class="nav-item">
+						        <a class="nav-link" href="settings.html">			       
+			                        <span class="nav-link-text">Project Console</span>
+						        </a>//nav-link
+						    </li>//nav-item
+					    </ul>//footer-menu
+				    </nav>
+			    </div> --><!--//app-sidepanel-footer-->
+		       
+	        </div><!--//sidepanel-inner-->
+	    </div><!--//app-sidepanel-->
+    </header><!--//app-header-->
+    
+    <div class="app-wrapper">
+	    
+	    <div class="app-content pt-3 p-md-3 p-lg-4">
+		    <div class="container-xl">
+			    
+			    <h1 class="app-page-title">Bug Report</h1>
+			    <p class = "app-directory">
+			    	Projects<span class = "app-directory-separator"> / </span>
+			    	<span id = "projectname">test-project</span><span class = "app-directory-separator"> / </span>
+			    	<span style = "color: #181c32">Bug Report</span>
+			    </p>
+			    
+			    
+				<div class = "row g-4 mb-8" style = "margin-bottom: 2rem;" id = "load-bugs-below">
+					<div class = "notification-line new">
+						<span>New</span>
+						<hr>
+					</div>
+					<!-- <div id = "insertNewBugsBefore">
+					</div> -->
+
+
+
+					
+
+
+
+
+
+
+				</div>
+				<!-- <h1 class="app-page-title" style = "margin-bottom: 2rem;">Reports Overview</h1> -->
+				<!-- <div class="row g-4 mb-4">
+					<div class = "col-8">
+					</div>
+			    </div> --><!--//row-->
+			    
+		    </div><!--//container-fluid-->
+	    </div><!--//app-content-->
+	    
+	    <footer class="app-footer">
+		    <div class="container text-center py-3">
+		         <!--/* This template is free as long as you keep the footer attribution link. If you'd like to use the template without the attribution link, you can buy the commercial license via our website: themes.3rdwavemedia.com Thank you for your support. :) */-->
+            <small class="copyright">© Copyright <strong>TraceJS</strong>. All Rights Reserved</small>
+		       
+		    </div>
+	    </footer><!--//app-footer-->
+	    
+    </div><!--//app-wrapper-->    					
+
+ 	<script>
+      window.addEventListener('scroll',(e)=>{
+        const nav = document.querySelector('.app-header');
+        if(window.pageYOffset>65){
+          nav.classList.add("add-shadow");
+          nav.style.height = "65px"
+        }else{
+          nav.classList.remove("add-shadow");
+          nav.style.height = "90px"
+        }
+      });
+    </script>
+
+    <!-- Javascript -->          
+    <script src="assets/vendor/popper.min.js"></script>
+    <script src="assets/vendor/bootstrap/js/bootstrap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <!-- Page Specific JS -->
+    <script src="assets/js/app.js"></script> 
+    <!-- Firebase App (the core Firebase SDK) is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-app.js"></script>
+
+    <!-- If you enabled Analytics in your project, add the Firebase SDK for Analytics -->
+    <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-analytics.js"></script>
+
+    <!-- Add Firebase products that you want to use -->
+    <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-firestore.js"></script>
+    <script>
+      // Your web app's Firebase configuration
+      // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+      var firebaseConfig = {
+        apiKey: "AIzaSyBOWC9oaTt38ZsLH42xbcNwwD3bMIiCTus",
+        authDomain: "bug-log-js.firebaseapp.com",
+        projectId: "bug-log-js",
+        storageBucket: "bug-log-js.appspot.com",
+        messagingSenderId: "938073792843",
+        appId: "1:938073792843:web:7f47a8751805807bccc8ce",
+        measurementId: "G-F74JXEFMSD"
+      };
+      // Initialize Firebase
+      firebase.initializeApp(firebaseConfig);
+      firebase.analytics();
+    </script>
+    <!-- <script src="assets/js/dashboard.js"></script> -->
+    <script src="assets/js/bugreportload.js"></script>
+
+</body>
+</html> 
+

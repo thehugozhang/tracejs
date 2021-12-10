@@ -1,0 +1,157 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="Hugo Zhang">
+    <title>Login</title>
+
+    <!-- Favicons -->
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/img/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/img/favicon/favicon-16x16.png">
+    <link rel="manifest" href="assets/img/favicon/site.webmanifest">
+
+    <!-- Bootstrap core CSS -->
+    <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Nunito:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+      
+    <!-- Custom styles for this template -->
+    <link href="assets/css/signup.css" rel="stylesheet">
+
+  </head>
+  <body>
+  <main>
+    <div class = "container-fluid g-0 h-100" >
+      <div class = "row g-0 h-100 justify-content-center align-items-center">
+      
+
+        <div class = "col-xs-12 col-sm-12 col-md-8 col-lg-6 h-100 d-flex align-items-center" style = "padding: 0 8%; background: #fff">
+          <div id = "topbox">
+          <!-- <div id = "loginbox" class = "login-box"> -->
+              <h2 class = "login-title" id = "login-title">Sign up for TraceJS</h2>
+              <div class="input-group mb-3">
+                <div class = "col-6">
+                  <input id = "signup-first" type="name" class="signupinput form-control" placeholder="First" aria-describedby="basic-addon1">
+                </div>
+                <div class = "col-6">
+                  <input id = "signup-last" type="name" class="signupinput form-control" placeholder="Last" aria-describedby="basic-addon1">
+                </div>
+
+              </div>
+              <div class="input-group mb-3">
+                <input id = "signup-email" type="email" class="signupinput form-control" placeholder="Email" aria-describedby="basic-addon1">
+              </div>
+              <div class="input-group mb-3">
+                <input id = "signup-password" type="password" class="signupinput form-control" placeholder="Password">
+              </div>
+              <div class="input-group" style = "margin-bottom: 0;">
+                <input id = "signup-confirm" type="password" class="signupinput form-control" placeholder="Confirm Password">
+              </div>
+              <div class="fpd">
+                <span class = "fp">By signing up for an account with TraceJS, you are agreeing to our <a class = "agreementlink" href = "#">Terms of Service</a> and <a class = "agreementlink" href = "#">Privacy Policy.</a>
+                </span>
+              </div>
+              
+              <button id = "signup-btn" type="submit" class="btn btn-primary btn-login" disabled><h2>Private Alpha</h2></button>
+              <div class="mb-3 links">
+                <a class = "bottomlink" href = "login.html">Already have an account? <span class = "signupspan">Log in</span></a>
+              </div>
+          <!-- </div> -->
+        </div>
+        </div>
+        <div class = "col-md-4 col-lg-6 h-100" style = "padding: 0 10%;">
+
+          
+<!--             <div class="box">
+              <h3 style="color: #07d5c0;">Developer</h3>
+              <div class="price" style = "margin:25px 0 25px 0;"><sup>$</sup>0<span> / mo</span></div>
+              <ul>
+                <li>100 Monthly Bug Reports</li>
+                <li>200 API Calls</li>
+                <li>1 Project</li>
+                <br>
+                <li class="na">Data Retention</li>
+                <li class="na">Priority Support</li>
+              </ul>
+              <a href="#" class="btn-buy">Get Started</a>
+            </div> -->
+     
+
+        </div>
+      </div>
+    </div>
+
+  </main>
+    <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script type = "text/javascript">
+      document.getElementById("signup-first").onchange = function() {
+        if (document.getElementById("signup-first").value != "") {
+          document.getElementById("signup-first").style.borderBottom = "2px solid #4154f1";
+        } else {
+          document.getElementById("signup-first").style.borderBottom = "2px solid #EBF1FF";
+        }
+      }
+      document.getElementById("signup-last").onchange = function() {
+        if (document.getElementById("signup-last").value != "") {
+          document.getElementById("signup-last").style.borderBottom = "2px solid #4154f1";
+        } else {
+          document.getElementById("signup-last").style.borderBottom = "2px solid #EBF1FF";
+        }
+      }
+      document.getElementById("signup-email").onchange = function() {
+        if (document.getElementById("signup-email").value != "") {
+          document.getElementById("signup-email").style.borderBottom = "2px solid #4154f1";
+        } else {
+          document.getElementById("signup-email").style.borderBottom = "2px solid #EBF1FF";
+        }
+      }
+      document.getElementById("signup-password").onchange = function() {
+        if (document.getElementById("signup-password").value != "") {
+          document.getElementById("signup-password").style.borderBottom = "2px solid #4154f1";
+        } else {
+          document.getElementById("signup-password").style.borderBottom = "2px solid #EBF1FF";
+        }
+      }
+      document.getElementById("signup-confirm").onchange = function() {
+        if (document.getElementById("signup-confirm").value != "") {
+          document.getElementById("signup-confirm").style.borderBottom = "2px solid #4154f1";
+        } else {
+          document.getElementById("signup-confirm").style.borderBottom = "2px solid #EBF1FF";
+        }
+      }
+    </script>
+    <body>
+
+    <!-- Firebase App (the core Firebase SDK) is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-app.js"></script>
+
+    <!-- If you enabled Analytics in your project, add the Firebase SDK for Analytics -->
+    <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-analytics.js"></script>
+
+    <!-- Add Firebase products that you want to use -->
+    <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-firestore.js"></script>
+    <script>
+      // Your web app's Firebase configuration
+      // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+      var firebaseConfig = {
+        apiKey: "AIzaSyBOWC9oaTt38ZsLH42xbcNwwD3bMIiCTus",
+        authDomain: "bug-log-js.firebaseapp.com",
+        projectId: "bug-log-js",
+        storageBucket: "bug-log-js.appspot.com",
+        messagingSenderId: "938073792843",
+        appId: "1:938073792843:web:7f47a8751805807bccc8ce",
+        measurementId: "G-F74JXEFMSD"
+      };
+      // Initialize Firebase
+      firebase.initializeApp(firebaseConfig);
+      firebase.analytics();
+    </script>
+    <script src="assets/js/signup.js"></script>
+      
+  </body>
+</html>

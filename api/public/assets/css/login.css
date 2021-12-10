@@ -1,0 +1,137 @@
+main {
+  width: 100%;
+  height: 100vh;
+  background: url(../img/hero-bg.png) top center no-repeat;
+  background-size: cover;
+}
+
+.login-box {
+  box-shadow: 0px 5px 30px rgb(1 41 112 / 12%);
+  padding: 40px 80px 40px 80px;
+  background: white;
+}
+
+.btn-login {
+  margin-top: 40px;
+  margin-bottom: 40px;
+  border-radius: 4px;
+  transition: 0.5s;
+  color: #fff;
+  background: #4154f1;
+  padding: 20px;
+  text-align: center;
+  border-radius: 8px;
+  width: 100%;
+  box-shadow: 0px 5px 25px rgba(65, 84, 241, 0.5);
+}
+
+.btn-login h2 {
+  font-family: "Nunito", sans-serif;
+  font-weight: 600;
+  font-size: 16px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: 0.5s;
+  margin: 0;
+}
+
+.login-title {
+  font-family: "Open Sans", sans-serif;
+  font-weight: 700;
+  color: #012970;
+  text-align: center;
+  font-size: 28px;
+  margin: 60px 0 60px 0;
+}
+
+.btn-login:hover {
+  cursor: pointer;
+  background: #5969f3;
+}
+
+#emailInput {
+  font-family: "Poppins", sans-serif;
+  background: #fff !important;
+  border-radius: 0;
+  border-bottom: 2px solid #EBF1FF;
+  border-top: 0;
+  border-left: 0;
+  border-right: 0;
+  outline: none;
+  transition: 0.2s ease-in-out;
+  margin-bottom: 24px;
+}
+
+#passwordInput {
+  font-family: "Poppins", sans-serif;
+  border-radius: 0;
+  border-bottom: 2px solid #EBF1FF;
+  border-top: 0;
+  border-left: 0;
+  border-right: 0;
+  outline: none;
+  transition: 0.2s ease-in-out;
+  margin-bottom: 24px;
+}
+
+.links {
+  text-align: center;
+}
+
+.bottomlink {
+  padding: 5px 10px 5px 10px;
+  color: gray;
+  font-family: "Nunito", sans-serif;
+  font-size: 18px;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.bottomlink:hover {
+  color:gray;
+}
+
+.fpd {
+  text-align: center;
+}
+
+.fp {
+  margin: 0 10px 0 10px;
+  color: gray;
+  font-family: "Nunito", sans-serif;
+  font-size: 16px;
+  text-decoration: none;
+  transition: 0.2s ease-in-out;
+}
+
+.fp:hover {
+  color: #4154f1;
+  cursor: pointer;
+}
+
+.signupspan {
+  transition: 0.2s ease-in-out;
+  padding: 0 2px 0 2px;
+  color: #4154f1;
+}
+
+.signupspan:hover {
+  cursor: pointer;
+}
+
+textarea:focus,
+input[type="email"]:focus,
+input[type="password"]:focus {   
+  box-shadow: 0 0 0 rgba(0, 0, 0, 0), 0 0 0 rgba(0, 0, 0, 0);
+  outline: 0 none;
+  border-bottom: 2px solid #4154f1 !important;
+}
+
+/* Change the white to any color */
+input:-webkit-autofill,
+input:-webkit-autofill:hover, 
+input:-webkit-autofill:focus, 
+input:-webkit-autofill:active
+{
+ -webkit-box-shadow: 0 0 0 30px white inset !important;
+}

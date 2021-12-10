@@ -1,0 +1,251 @@
+.new-project {
+	border-radius: 0.875rem;
+	width: 100%; 
+	height: 100%;
+}
+
+.new-project-btn {
+	color: #4514f1;
+	transition: 0.2s ease-in-out;
+	padding: 60px 0;
+}
+
+.new-project-btn:hover {
+	background: #f5f8fa;
+	cursor: pointer;
+}
+
+.new-project-btn p {
+	font-family: 'Open Sans', sans-serif;
+	font-weight: 600;
+	font-size: 0.875rem;
+}
+
+.new-project-btn i {
+	font-size: 1.25rem;
+}
+
+.new-project-btn-footer {
+	border-bottom-left-radius: 0.875rem !important;
+	border-bottom-right-radius: 0.875rem !important;
+	font-family: 'Open Sans', sans-serif;
+	color: #4514f1;
+	font-weight: 600;
+	font-size: 0.875rem;
+	text-align: center;
+	padding: 20px 0;
+	transition: 0.2s ease-in-out;
+	background: #fff;
+}
+
+.new-project-btn-footer-padding {
+	font-size: 0.875rem;
+	padding: 20px 24px;
+}
+
+
+.new-project-btn-footer:hover {
+	background: #f5f8fa;
+	cursor: pointer;
+}
+
+.hero-console {
+	padding-top: 65px;
+	width: 100%;
+	height: 60vh;
+	background: #4514f1;/*linear-gradient(0deg, rgba(51,11,193,1) 0%, rgba(69,20,241,1) 100%);*/
+	/*background-image: url('../img/hero-bg.png') top center no-repeat;*/
+	background-size: cover;
+	/*margin-bottom: 65px;*/
+	position: relative;
+}
+
+.hero-console h1 {
+	font-family: 'Nunito', sans-serif;
+	font-weight: 700;
+	color: #fff;
+}
+
+.hero-console p {
+	font-family: 'Nunito', sans-serif;
+	font-weight: 500;
+	font-size: 1.125rem;
+	color: #fff;
+}
+
+.logo-text-span {
+	font-family: "Nunito", sans-serif;
+	font-weight: 700;
+}
+
+.upgrade-plan-text {
+	transition: 0.2s ease-in-out;
+}
+
+.upgrade-plan-text:hover {
+	color: #4514f1;
+	cursor: pointer;
+}
+
+.project-card {
+	border-radius: 0.875rem;
+	width: 100%; 
+	height: 100%;
+	transition: 0.2s ease-in-out;
+}
+
+.project-card:hover {
+	cursor: pointer;
+	background: #f5f8fa;;
+}
+
+.project-card-header {
+	border: none;
+	padding: 1.5rem !important;
+}
+
+.project-card-header h1 {
+	font-size: 1.25rem;
+	font-family: 'Open Sans', sans-serif;
+	font-weight: 600;
+	margin-bottom: 0.25rem;
+	/*padding: 10px;*/
+}
+
+.project-card-footer {
+	border: none;
+	padding: 1.125rem 1.5rem;
+}
+
+.project-card-col {
+	height: 250px;
+}
+
+.project-card-header p {
+	color: #a1a5b7;
+	font-family: 'Open Sans', sans-serif;
+	font-weight: 500;
+	font-size: 0.875rem;
+}
+
+.custom-shape-divider-bottom-1625654550 {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+    transform: rotate(180deg);
+}
+
+.custom-shape-divider-bottom-1625654550 svg {
+    position: relative;
+    display: block;
+    width: calc(125% + 1.3px);
+    height: 81px;
+    transform: rotateY(180deg);
+}
+
+.custom-shape-divider-bottom-1625654550 .shape-fill {
+    fill: #FFFFFF;
+}
+
+.modal-newproject {
+	border: none;
+	border-radius: 0.875rem;
+	padding: 1rem;
+}
+
+.modal-newproject-header {
+	border: none;
+}
+
+.modal-newproject-header h5 {
+	/*color: #181c32;*/
+	font-size: 2rem;
+	font-family: "Nunito", sans-serif;
+	font-weight: 700;
+	padding: 0.25rem 0;
+}
+
+/*.modal-newproject-header button {
+	background: #D9DDFC;
+	color: #4154f1 !important;
+	opacity: 1;
+}
+*/
+.modal-newproject-body {
+	border: none;
+	margin: 1rem auto 1rem auto;
+	padding: 0.75rem;
+	width: 90%;
+}
+
+.modal-newproject-body input {
+  font-family: "Poppins", sans-serif;
+  background: #fff !important;
+  border-radius: 0;
+  border-bottom: 2px solid #EBF1FF;
+  border-top: 0;
+  border-left: 0;
+  border-right: 0;
+  outline: none;
+  transition: 0.2s ease-in-out;
+  /*margin-bottom: 24px;*/
+}
+
+.modal-newproject-body label {
+  font-family: "Nunito", sans-serif;
+  color: gray;
+  font-size: 0.875rem;
+  margin: 0.625rem 0 0 0;
+  padding: 0;
+  width: 100%;
+  text-align: center;
+  
+}
+
+textarea:focus,
+input[type="email"]:focus,
+input[type="password"]:focus {   
+  box-shadow: 0 0 0 rgba(0, 0, 0, 0), 0 0 0 rgba(0, 0, 0, 0);
+  outline: 0 none;
+  border-bottom: 2px solid #4154f1 !important;
+}
+
+/* Change the white to any color */
+input:-webkit-autofill,
+input:-webkit-autofill:hover, 
+input:-webkit-autofill:focus, 
+input:-webkit-autofill:active
+{
+ -webkit-box-shadow: 0 0 0 30px white inset !important;
+}
+
+.modal-newproject-footer {
+	border-bottom-left-radius: 0.875rem;
+	border-bottom-right-radius: 0.875rem;
+	border: none;
+}
+
+.btn-newproject-modal {
+	height: 100%;
+	line-height: 1.5;
+	padding: 0.8rem 0;
+	border-radius: .25rem;
+	transition: 0.5s;
+	color: #fff;
+	background: #4154f1;
+	box-shadow: 0px 5px 25px rgba(65, 84, 241, 0.3);
+	font-family: "Nunito", sans-serif;
+	font-weight: 600;
+	font-size: 1rem;
+	letter-spacing: 1px;
+	width: 100%;
+}
+
+.btn-newproject-modal:hover {
+	color: white;
+	cursor: pointer;
+	background: #5969f3;
+}

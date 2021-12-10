@@ -1,0 +1,37 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+
+  <title>TraceJS Demo</title>
+  <meta name="description" content="Tester for TraceJS">
+  <meta name="author" content="Hugo Zhang">
+
+</head>
+
+<body>
+  Check the console.
+  <button type="button" id = "report-btn">Report a bug!</button>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/gh/thehugozhang/tracejs@main/dist/trace.js" crossorigin="anonymous"></script>
+  <script>
+    // TODO: Replace the following with your app's TraceJS project configuration Id
+    var traceJSConfig = {
+    	id: "tester-id-888",
+      project_id: "test-project"
+    };
+
+    // Initialize TraceJS
+    tracejs.init(traceJSConfig);
+  </script>
+
+  <!-- Demo main.js file -->
+  <script>
+    document.getElementById("report-btn").onclick = function() {
+      // Fire a pure syntax error for testing purposes
+      aa.ll.kk;
+    }
+  </script>
+</body>
+</html>

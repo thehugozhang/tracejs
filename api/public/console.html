@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en"> 
+<head>
+    <title>Project Console</title>
+    
+    <!-- Meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <meta name="description" content="">
+    <meta name="author" content="Hugo Zhang">   
+
+    <!-- Favicons -->
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/img/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/img/favicon/favicon-16x16.png">
+    <link rel="manifest" href="assets/img/favicon/site.webmanifest">
+    
+    <!-- FontAwesome JS-->
+    <script defer src="assets/vendor/fontawesome/js/all.min.js"></script>
+    <link href="assets/vendor/remixicon/remixicon.css" rel="stylesheet">
+    <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    
+    <!-- Google Fonts -->
+  	<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Nunito:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+  	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+
+    <!-- App CSS -->  
+    <link id="theme-style" rel="stylesheet" href="assets/css/consolemain.css">
+    <link id="theme-style" rel="stylesheet" href="assets/css/console.css">
+
+</head> 
+
+<body class="app">   
+
+	<div class="modal fade" id="newProjectModal" tabindex="-1" aria-labelledby="newProjectModalLabel" aria-hidden="true">
+	  <div class="modal-dialog modal-dialog-centered">
+	    <div class="modal-content modal-newproject">
+	      <div class="modal-header modal-newproject-header">
+	        <h5 class="modal-title" id="newProjectModalLabel">Create a project</h5>
+	        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+
+	      </div>
+	      
+	      <div class="modal-body modal-newproject-body">
+<!-- 	      	<div class="custom-shape-divider-top-1626002843">
+    <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+        <path d="M1200 0L0 0 598.97 114.72 1200 0z" class="shape-fill"></path>
+    </svg>
+</div> -->
+	        <div class="mb-3">
+			  <input type="email" class="form-control" id="projectNameInput" placeholder="My First Project">
+  			  <label id = "projectNameInputLabel" for="projectNameInput" class="form-label">Enter your project name</label>
+
+			</div>
+	      </div>
+	      <div class="modal-footer modal-newproject-footer">
+	        <!-- <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button> -->
+	        <button type="button" class="btn btn-primary btn-newproject-modal" id = "createProjectButton">Create</button>
+	      </div>
+	    </div>
+	  </div>
+	</div>	
+
+    <header class="app-header fixed-top">	   	            
+        <div class="app-header-inner">  
+	        <div class="container-fluid py-2 h-100">
+		    	<div class="col-auto h-100">
+		    		<div class = "app-header-content h-100">
+		    			<div class = "d-flex justify-content-between align-items-center h-100 innerheadercontentpadding">
+
+						    <div class = "d-flex align-items-center">
+						    	<!-- <a href = "#" class = "btpca d-inline-flex align-items-center">
+								    <i class="bi bi-arrow-bar-left"></i>
+								    <span class="d-flex align-items-center">Back to Project Console</span>
+								</a> -->
+								<div class="app-branding">
+						            <a class="app-logo" href="index.html"><img class="logo-icon me-2" src="assets/img/logotransparent.png" alt="logo"><span class="logo-text" id = "brand-text-change-scroll">TraceJS</span></a>
+						        </div>
+							</div>
+
+							<div class = "d-flex align-items-center">
+								<a href = "#" class = "rightnavpadding btpca d-inline-flex align-items-center">
+									<span class="d-flex align-items-center hover-underline-animation" id = "docs-text-change-scroll">Go to docs</span>
+								</a>
+								<a href = "#" class = "rightnavpadding btpca d-inline-flex align-items-center">
+								    <!-- <i class="bi bi-person"></i> -->
+								    <span class="d-flex align-items-center hover-underline-animation" style = "font-weight: 700;" id = "welcome-label">Welcome</span>
+								</a>
+						    	<a id = "logout-btn" class = "rightnavpadding btpca d-inline-flex align-items-center">
+								    <span class="d-flex align-items-center hover-underline-animation" id = "logout-text-change-scroll">Logout</span>
+								</a>
+							</div>
+							
+							<!-- <a href = "#" class="btn-logout d-inline-flex align-items-center justify-content-center align-self-center">
+			                  <span>Logout</span>
+			                </a> -->
+						</div>
+					</div>
+			    </div><!--//col-->
+	        </div><!--//container-fluid-->
+        </div><!--//app-header-inner-->
+    </header><!--//app-header-->
+
+    <div class = "hero-console d-flex align-items-center">
+    	<div class = "container">
+    		<div class = "row">
+    			<div class = "col-6 d-flex align-items-center">
+    				<div>
+	    				<h1 style = "margin-bottom: 1rem !important;">Welcome to your Project Console!</h1>
+	    				<p style = "margin-bottom: 4rem !important;">Create, navigate, and contol all your projects here.</p>
+	    				<div class = "d-flex align-items-center">
+		    				<a class="btn-create d-inline-flex align-items-center justify-content-center align-self-center" data-bs-toggle="modal" data-bs-target="#newProjectModal">
+			                	<span>Create Project</span>
+			                	<i class="bi bi-arrow-right"></i>
+			                </a>
+			                <a class="btn-docs d-inline-flex align-items-center justify-content-center align-self-center">
+			                	<span class = "hover-underline-animation"><i class="bi bi-card-text"></i>Docs</span>
+			                </a>
+			            </div>
+	    			</div>
+    			</div>
+    			<div class = "col-6 d-flex justify-content-center">
+    				<img src="assets/img/features-2.png" class="img-fluid" style = "height: auto; width: 75%;" alt="">
+    			</div>
+    		</div>
+    		
+    	</div>
+    	<div class="custom-shape-divider-bottom-1625654550">
+		    <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+		        <path d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V0Z" opacity=".25" class="shape-fill"></path>
+		        <path d="M0,0V15.81C13,36.92,27.64,56.86,47.69,72.05,99.41,111.27,165,111,224.58,91.58c31.15-10.15,60.09-26.07,89.67-39.8,40.92-19,84.73-46,130.83-49.67,36.26-2.85,70.9,9.42,98.6,31.56,31.77,25.39,62.32,62,103.63,73,40.44,10.79,81.35-6.69,119.13-24.28s75.16-39,116.92-43.05c59.73-5.85,113.28,22.88,168.9,38.84,30.2,8.66,59,6.17,87.09-7.5,22.43-10.89,48-26.93,60.65-49.24V0Z" opacity=".5" class="shape-fill"></path>
+		        <path d="M0,0V5.63C149.93,59,314.09,71.32,475.83,42.57c43-7.64,84.23-20.12,127.61-26.46,59-8.63,112.48,12.24,165.56,35.4C827.93,77.22,886,95.24,951.2,90c86.53-7,172.46-45.71,248.8-84.81V0Z" class="shape-fill"></path>
+		    </svg>
+		</div>
+    </div>
+    
+    <div class="app-wrapper">
+	    
+	    <div class="app-content pt-3 p-md-3 p-lg-4">
+		    <div class="container-xl" style = "padding: 0 5% 0 5%;">
+
+		    	<div class = "d-flex justify-content-between" style = "padding: 0 12px 0 12px;">
+		    		<div>
+					    <h1 class="app-page-title">Project Console</h1>
+					    <p class = "app-directory">
+					    	Projects<span class = "app-directory-separator"> / </span>
+					    </p>
+					</div>
+			    	<div style = "text-align: right;">
+					    <h1 class="app-page-title">Remaining Projects: <span id = "projects-remaining-count"></span></h1>
+					    <p class = "app-directory upgrade-plan-text">
+					    	Need more projects?
+					    </p>
+					</div>
+			    </div>
+			    
+
+			    <div class = "container">
+			        <div class = "row" id = "projects-row">
+			          <div class = "col-12 col-lg-4 col-md-6 col-sm-12 mb-4 project-card-col">
+
+			            <div class="card mb-3 new-project shadow-sm">
+			              <div class="card-body new-project-btn d-flex align-items-center" data-bs-toggle="modal" data-bs-target="#newProjectModal">
+			                <div class = "container">
+			                  <div class = "row" style = "text-align: center;">
+
+			                    <i class="bi bi-plus-lg"></i>
+			                  </div>
+			                  <div class = "row" style = "text-align: center;">
+			                    <p class="card-text">New project</p>
+			                  </div>
+
+			                </div>
+			              </div>
+			              <div class="card-footer d-flex justify-content-center new-project-btn-footer">
+			                <div>
+			                  <i class="bi bi-compass-fill" style = "margin-right: 0.25rem;"></i>
+			                  <span >Explore a demo project</span>
+			                </div>
+			              </div>
+			            </div>
+
+			          </div>
+			          <!-- <div class = "col-4 mb-4 project-card-col">
+
+
+			            <div class="card mb-3 project-card shadow-sm toDashboard" id = "UqrMw6JGFyewn8JUKjQ6">
+			              <div class="card-header bg-transparent project-card-header">
+			              	<h1>Test Project</h1>
+			              	<p>Project ID: UqrMw6JGFyewn8JUKjQ6</p>
+			              </div>
+			              <div class="card-body d-flex align-items-center">
+			                
+			              </div>
+			              <div class="card-footer bg-transparent d-flex justify-content-between project-card-footer">
+			                <div class = "d-flex align-items-center">
+			                	<i class="bi bi-code-slash" style = "font-size: 1.25rem;"></i>
+			                </div>
+			              </div>
+			            </div>
+
+			          </div> -->
+
+
+
+			        </div>
+		     	</div>
+			    
+				
+
+
+
+
+
+
+				
+				<!-- <h1 class="app-page-title" style = "margin-bottom: 2rem;">Reports Overview</h1> -->
+				<!-- <div class="row g-4 mb-4">
+					<div class = "col-8">
+					</div>
+			    </div> --><!--//row-->
+			    
+		    </div><!--//container-fluid-->
+	    </div><!--//app-content-->
+	    
+	    <footer class="app-footer">
+		    <div class="container text-center py-3 d-flex justify-content-between" style = "padding: 0 5% 0 5%;">
+		         <!--/* This template is free as long as you keep the footer attribution link. If you'd like to use the template without the attribution link, you can buy the commercial license via our website: themes.3rdwavemedia.com Thank you for your support. :) */-->
+            <small class="copyright">© Copyright <strong>TraceJS</strong>. All Rights Reserved</small>
+            <div>
+            	<a href = "#">Support</a>
+            	<a href = "#">Terms</a>
+            	<a href = "#">Privacy Policy</a>
+            </div>
+		       
+		    </div>
+	    </footer><!--//app-footer-->
+	    
+    </div><!--//app-wrapper-->    					
+
+ 	<script>
+ 	  var logotext = document.getElementById('brand-text-change-scroll')
+ 	  var docstext = document.getElementById('docs-text-change-scroll')
+ 	  var logouttext = document.getElementById('logout-text-change-scroll')
+ 	  var welcometext = document.getElementById('welcome-label')
+      window.addEventListener('scroll',(e)=>{
+        const nav = document.querySelector('.app-header');
+        if(window.pageYOffset>65){
+          nav.classList.add("add-shadow");
+          nav.style.height = "65px"
+          nav.style.background = "#fff"
+          logotext.style.color = "#012970"
+          docstext.style.color = "#7e8299"
+          logouttext.style.color = "#7e8299"
+          welcometext.style.color = "#7e8299"
+        }else{
+          nav.classList.remove("add-shadow");
+          nav.style.height = "90px"
+          nav.style.background = "transparent"
+          logotext.style.color = "#fff"
+          docstext.style.color = "#fff"
+          logouttext.style.color = "#fff"
+          welcometext.style.color = "#fff"
+        }
+      });
+    </script>
+
+    <!-- Javascript -->          
+    <script src="assets/vendor/popper.min.js"></script>
+    <script src="assets/vendor/bootstrap/js/bootstrap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <!-- Page Specific JS -->
+    <script src="assets/js/app.js"></script> 
+    <script type = "text/javascript">
+      document.getElementById("projectNameInput").onchange = function() {
+        if (document.getElementById("projectNameInput").value != "") {
+          document.getElementById("projectNameInput").style.borderBottom = "2px solid #4154f1";
+          document.getElementById("projectNameInputLabel").style.color = "green";
+          document.getElementById("projectNameInputLabel").textContent = "Great! Create now to start debugging"
+        } else {
+          document.getElementById("projectNameInput").style.borderBottom = "2px solid #EBF1FF";
+          document.getElementById("projectNameInputLabel").style.color = "red";
+          document.getElementById("projectNameInputLabel").textContent = "Project name is required"
+        }
+      }
+
+	    var modal = document.getElementById('newProjectModal')
+		modal.addEventListener('hidden.bs.modal', function (event) {
+		  document.getElementById("projectNameInput").value = ""
+		  document.getElementById("projectNameInput").style.borderBottom = "2px solid #EBF1FF";
+          document.getElementById("projectNameInputLabel").style.color = "gray";
+          document.getElementById("projectNameInputLabel").textContent = "Enter your project name"
+		})
+    </script>
+    <!-- Firebase App (the core Firebase SDK) is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-app.js"></script>
+
+    <!-- If you enabled Analytics in your project, add the Firebase SDK for Analytics -->
+    <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-analytics.js"></script>
+
+    <!-- Add Firebase products that you want to use -->
+    <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-firestore.js"></script>
+    <script>
+      // Your web app's Firebase configuration
+      // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+      var firebaseConfig = {
+        apiKey: "AIzaSyBOWC9oaTt38ZsLH42xbcNwwD3bMIiCTus",
+        authDomain: "bug-log-js.firebaseapp.com",
+        projectId: "bug-log-js",
+        storageBucket: "bug-log-js.appspot.com",
+        messagingSenderId: "938073792843",
+        appId: "1:938073792843:web:7f47a8751805807bccc8ce",
+        measurementId: "G-F74JXEFMSD"
+      };
+      // Initialize Firebase
+      firebase.initializeApp(firebaseConfig);
+      firebase.analytics();
+    </script>
+    <!-- <script src="assets/js/dashboard.js"></script> -->
+    <script src="assets/js/consoleload.js"></script>
+
+</body>
+</html> 
+
